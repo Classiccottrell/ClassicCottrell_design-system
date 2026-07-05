@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 
+import { Eyebrow } from '@/components/ui/eyebrow'
 import { cn } from '@/lib/utils'
 
 interface SectionProps {
@@ -25,9 +26,9 @@ export function Section({
       className="scroll-mt-24 border-t border-border py-16 md:py-24"
     >
       <div className="mb-10 flex flex-col gap-3 md:mb-12">
-        <span className="font-mono text-xs tracking-[0.2em] text-muted-foreground uppercase">
+        <Eyebrow>
           {index} / {id}
-        </span>
+        </Eyebrow>
         <h2 className="font-serif text-3xl leading-tight text-balance text-foreground md:text-5xl">
           {title}
         </h2>

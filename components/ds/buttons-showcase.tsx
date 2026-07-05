@@ -1,6 +1,7 @@
 import { ArrowUpRight, Check, Plus } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
+import { Eyebrow } from '@/components/ui/eyebrow'
 
 const variants = ['default', 'secondary', 'outline', 'ghost', 'link', 'destructive'] as const
 
@@ -13,9 +14,7 @@ function Panel({
 }) {
   return (
     <div className="rounded-xl border border-border bg-card p-6">
-      <span className="mb-5 block font-mono text-xs tracking-[0.2em] text-muted-foreground uppercase">
-        {label}
-      </span>
+      <Eyebrow className="mb-5 block">{label}</Eyebrow>
       <div className="flex flex-wrap items-center gap-3">{children}</div>
     </div>
   )

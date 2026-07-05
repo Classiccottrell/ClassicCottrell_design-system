@@ -1,5 +1,6 @@
 import { ArrowUpRight, Info, Star } from 'lucide-react'
 
+import { Avatar, AvatarFallback } from '@/components/ui/avatar'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import {
@@ -10,8 +11,12 @@ import {
   CardTitle,
 } from '@/components/ui/card'
 import { Checkbox } from '@/components/ui/checkbox'
+import { Eyebrow } from '@/components/ui/eyebrow'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
+import { Separator } from '@/components/ui/separator'
+import { Switch } from '@/components/ui/switch'
+import { Textarea } from '@/components/ui/textarea'
 
 export function ComponentsShowcase() {
   return (
@@ -43,9 +48,9 @@ export function ComponentsShowcase() {
       {/* Form card */}
       <Card>
         <CardHeader>
-          <CardTitle>Subscribe</CardTitle>
+          <CardTitle>Get in touch</CardTitle>
           <CardDescription>
-            Form controls, inputs, and focus rings.
+            Inputs, textareas, checkboxes, and switches.
           </CardDescription>
         </CardHeader>
         <CardContent className="flex flex-col gap-5">
@@ -54,15 +59,26 @@ export function ComponentsShowcase() {
             <Input id="ds-name" placeholder="Matthew Cottrell" />
           </div>
           <div className="flex flex-col gap-2">
-            <Label htmlFor="ds-email">Email</Label>
-            <Input id="ds-email" type="email" placeholder="you@studio.com" />
+            <Label htmlFor="ds-message">Message</Label>
+            <Textarea
+              id="ds-message"
+              rows={3}
+              placeholder="Tell us about your project…"
+            />
           </div>
           <Label className="text-muted-foreground font-normal">
             <Checkbox defaultChecked id="ds-updates" />
             Send me occasional updates
           </Label>
+          <Separator />
+          <div className="flex items-center justify-between">
+            <Label htmlFor="ds-newsletter" className="font-normal">
+              Weekly newsletter
+            </Label>
+            <Switch id="ds-newsletter" defaultChecked />
+          </div>
           <Button size="lg" className="w-full">
-            Join the list
+            Send message
           </Button>
         </CardContent>
       </Card>
@@ -71,9 +87,7 @@ export function ComponentsShowcase() {
       <div className="flex flex-col gap-6">
         <Card className="gap-4 py-6">
           <CardContent>
-            <span className="mb-4 block font-mono text-xs tracking-[0.2em] text-muted-foreground uppercase">
-              Badges
-            </span>
+            <Eyebrow className="mb-4 block">Badges</Eyebrow>
             <div className="flex flex-wrap gap-2">
               <Badge>Primary</Badge>
               <Badge variant="accent">Accent</Badge>
@@ -99,10 +113,11 @@ export function ComponentsShowcase() {
         </div>
 
         <div className="rounded-2xl border border-border bg-secondary p-6">
+          <Eyebrow className="mb-4 block">Identity</Eyebrow>
           <div className="flex items-center gap-4">
-            <div className="flex size-12 items-center justify-center rounded-full bg-primary font-serif text-lg text-primary-foreground">
-              MC
-            </div>
+            <Avatar className="size-12">
+              <AvatarFallback className="text-lg">MC</AvatarFallback>
+            </Avatar>
             <div>
               <p className="font-medium text-secondary-foreground">
                 Matthew A. Cottrell

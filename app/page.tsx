@@ -7,6 +7,7 @@ import { Section } from '@/components/ds/section'
 import { SiteHeader } from '@/components/ds/site-header'
 import { TypographyShowcase } from '@/components/ds/typography-showcase'
 import { Button } from '@/components/ui/button'
+import { Eyebrow } from '@/components/ui/eyebrow'
 
 export default function Page() {
   return (
@@ -51,9 +52,9 @@ export default function Page() {
               { k: 'Text', v: 'Red Hat Display' },
             ].map((item) => (
               <div key={item.k} className="bg-card p-5">
-                <dt className="font-mono text-[11px] tracking-[0.15em] text-muted-foreground uppercase">
+                <Eyebrow render={<dt />} size="sm">
                   {item.k}
-                </dt>
+                </Eyebrow>
                 <dd className="mt-1 font-serif text-lg text-card-foreground">
                   {item.v}
                 </dd>
