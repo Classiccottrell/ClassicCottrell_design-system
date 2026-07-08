@@ -1,6 +1,38 @@
-# ClassicCottrell_design-system
+# ClassicCottrell Design System
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [v0](https://v0.app).
+An editorial design system — warm cream canvas, a single forest-green accent, and a
+Rosarivo-serif / Red Hat Display-sans pairing — inspired by ClassicCottrell.ca.
+Built with [Next.js](https://nextjs.org) (App Router), React 19, Tailwind CSS v4,
+and [`@base-ui/react`](https://base-ui.com) primitives.
+
+- **Live showcase:** the home page (`/`) — tokens, type, buttons, and components.
+- **Demo pages:** `/demos` — a landing, contact form, about, and gallery page, each
+  assembled entirely from the reusable primitives.
+
+## Documentation
+
+| Doc | What's in it |
+| --- | --- |
+| [`docs/COMPONENTS.md`](docs/COMPONENTS.md) | Every primitive in `components/ui/` — props, variants, and copy-paste examples. |
+| [`docs/PAGES.md`](docs/PAGES.md) | Step-by-step reconstruction of each demo page from the primitives. |
+| [`REVIEW.md`](REVIEW.md) | Architecture review, what was extended, and follow-up recommendations. |
+
+## Project structure
+
+```
+app/
+  globals.css          # design tokens (light + dark) + theme mapping
+  layout.tsx           # fonts, ThemeProvider, metadata
+  page.tsx             # design-system showcase (home)
+  demos/               # landing · form · about · gallery (+ shared layout)
+components/
+  ui/                  # reusable primitives (Button, Card, Input, Badge, …)
+  ds/                  # showcase-only helpers (Section, SiteHeader, ThemeToggle)
+lib/utils.ts           # cn() — clsx + tailwind-merge
+```
+
+Re-theming is a values-only edit: change the CSS variables in `app/globals.css`
+and every component follows.
 
 ## Built with v0
 

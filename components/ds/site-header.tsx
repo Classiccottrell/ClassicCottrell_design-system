@@ -5,6 +5,7 @@ const nav = [
   { label: 'Type', href: '#typography' },
   { label: 'Buttons', href: '#buttons' },
   { label: 'Components', href: '#components' },
+  { label: 'Demos', href: '#demos' },
 ]
 
 export function SiteHeader() {

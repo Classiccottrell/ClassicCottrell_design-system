@@ -7,13 +7,15 @@ import { Section } from '@/components/ds/section'
 import { SiteHeader } from '@/components/ds/site-header'
 import { TypographyShowcase } from '@/components/ds/typography-showcase'
 import { Button } from '@/components/ui/button'
+import { Container } from '@/components/ui/container'
 
 export default function Page() {
   return (
     <div id="top" className="min-h-dvh bg-background">
       <SiteHeader />
 
-      <main className="mx-auto max-w-6xl px-6">
+      <main>
+        <Container>
         {/* Hero */}
         <section className="flex flex-col items-start gap-8 py-20 md:py-28">
           <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-[0.2em] text-muted-foreground uppercase">
@@ -97,17 +99,49 @@ export default function Page() {
         >
           <ComponentsShowcase />
         </Section>
+
+        {/* Demos */}
+        <Section
+          id="demos"
+          index="05"
+          title="Demo pages"
+          description="Four pages assembled entirely from the primitives above — a working reference for how the system composes into real screens."
+        >
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { href: '/demos/landing', label: 'Landing', note: 'Hero · features · CTA' },
+              { href: '/demos/form', label: 'Contact form', note: 'Fields · validation' },
+              { href: '/demos/about', label: 'About me', note: 'Avatar · timeline' },
+              { href: '/demos/gallery', label: 'Gallery', note: 'Card media grid' },
+            ].map((d) => (
+              <a
+                key={d.href}
+                href={d.href}
+                className="group flex flex-col justify-between gap-6 rounded-2xl border border-border bg-card p-6 transition-colors hover:border-primary/40 hover:bg-accent"
+              >
+                <ArrowUpRight className="size-5 text-muted-foreground transition-colors group-hover:text-primary" />
+                <div>
+                  <p className="font-serif text-xl text-card-foreground">
+                    {d.label}
+                  </p>
+                  <p className="mt-1 text-sm text-muted-foreground">{d.note}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+        </Section>
+        </Container>
       </main>
 
       <footer className="border-t border-border">
-        <div className="mx-auto flex max-w-6xl flex-col items-center gap-2 px-6 py-12 text-center">
+        <Container className="flex flex-col items-center gap-2 py-12 text-center">
           <p className="font-serif text-2xl text-foreground">
             Cottrell<span className="text-primary">.</span>
           </p>
           <p className="text-sm text-muted-foreground">
             An editorial design system · Inspired by ClassicCottrell.ca
           </p>
-        </div>
+        </Container>
       </footer>
     </div>
   )
