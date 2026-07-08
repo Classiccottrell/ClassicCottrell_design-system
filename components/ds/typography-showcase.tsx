@@ -1,3 +1,5 @@
+import { Eyebrow } from '@/components/ui/eyebrow'
+
 const typeScale = [
   { label: 'Display', className: 'font-serif text-5xl md:text-7xl', sample: 'Effortless', note: 'Rosarivo · 72px' },
   { label: 'H1', className: 'font-serif text-4xl md:text-5xl', sample: 'Enterprise, simplified', note: 'Rosarivo · 48px' },
@@ -13,9 +15,7 @@ export function TypographyShowcase() {
     <div className="grid gap-6 lg:grid-cols-[1fr_1.4fr]">
       <div className="flex flex-col gap-6">
         <div className="rounded-xl border border-border bg-card p-8">
-          <span className="font-mono text-xs tracking-[0.2em] text-muted-foreground uppercase">
-            Display / Serif
-          </span>
+          <Eyebrow>Display / Serif</Eyebrow>
           <p className="mt-4 font-serif text-6xl leading-none text-primary italic">
             Aa
           </p>
@@ -27,9 +27,7 @@ export function TypographyShowcase() {
           </p>
         </div>
         <div className="rounded-xl border border-border bg-card p-8">
-          <span className="font-mono text-xs tracking-[0.2em] text-muted-foreground uppercase">
-            Text / Sans
-          </span>
+          <Eyebrow>Text / Sans</Eyebrow>
           <p className="mt-4 font-sans text-6xl leading-none font-semibold text-card-foreground">
             Aa
           </p>
