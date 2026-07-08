@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 
 import { Badge } from '@/components/ui/badge'
 import { Container } from '@/components/ui/container'
+import { Eyebrow } from '@/components/ui/eyebrow'
 
 export const metadata: Metadata = {
   title: 'Demos — Cottrell Design System',
@@ -47,9 +48,7 @@ export default function DemosIndex() {
     <main>
       <Container className="py-16 md:py-24">
         <div className="flex flex-col gap-3">
-          <span className="font-mono text-xs tracking-[0.2em] text-muted-foreground uppercase">
-            Reference
-          </span>
+          <Eyebrow>Reference</Eyebrow>
           <h1 className="max-w-3xl font-serif text-4xl leading-tight text-balance text-foreground md:text-6xl">
             Pages built from the system
           </h1>

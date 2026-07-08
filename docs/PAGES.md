@@ -16,12 +16,11 @@ primitives in [`COMPONENTS.md`](./COMPONENTS.md). The finished versions live in
 4. **Serif for display, sans for UI.** Headings use `font-serif`; body/labels use
    the default sans.
 
-Section-eyebrow + heading pattern used throughout:
+Section-eyebrow + heading pattern used throughout (the kicker is the `Eyebrow`
+primitive):
 
 ```tsx
-<span className="font-mono text-xs tracking-[0.2em] text-muted-foreground uppercase">
-  Section label
-</span>
+<Eyebrow>Section label</Eyebrow>
 <h2 className="font-serif text-3xl leading-tight text-balance text-foreground md:text-5xl">
   Heading
 </h2>
@@ -53,9 +52,8 @@ hairlines between cells:
 ```
 
 **Step 3 — Feature grid.** A new `Container`, the eyebrow+heading pattern, then a
-`grid gap-6 md:grid-cols-3` of `Card`s. Each card: an icon in a
-`size-12 rounded-full bg-accent` circle, then `CardContent` with `CardTitle` +
-`CardDescription`.
+`grid gap-6 md:grid-cols-3` of `Card`s. Each card: a `<FeatureIcon>` chip holding
+a lucide icon, then `CardContent` with `CardTitle` + `CardDescription`.
 
 **Step 4 — CTA band.** A full-width rounded panel:
 `rounded-3xl border border-primary/25 bg-accent p-10 md:p-16` holding a serif
@@ -63,7 +61,8 @@ heading, a line of copy, and a `Button` linking to the form.
 
 **Step 5 — Design note.** A `Callout variant="info"` closing the page.
 
-Components used: `Container`, `Badge`, `Button`, `Card`, `Callout`.
+Components used: `Container`, `Eyebrow`, `Badge`, `Button`, `FeatureIcon`,
+`Card`, `Callout`.
 
 ---
 
@@ -122,7 +121,7 @@ keeps the `Badge` from stretching) holding a `Badge`, serif `<h1>`, lead, and tw
 `Button`s.
 
 **Step 2 — Values grid.** Eyebrow + heading, then `grid gap-6 md:grid-cols-3` of
-`Card`s — same icon-circle + `CardContent` recipe as the landing features.
+`Card`s — same `FeatureIcon` + `CardContent` recipe as the landing features.
 
 **Step 3 — Timeline.** Map rows; each row is a
 `flex flex-col md:flex-row md:gap-10` with a mono year on the left and
@@ -141,7 +140,8 @@ the last):
 ))}
 ```
 
-Components used: `Container`, `Avatar`, `Badge`, `Button`, `Card`, `Separator`.
+Components used: `Container`, `Eyebrow`, `Avatar`, `Badge`, `Button`,
+`FeatureIcon`, `Card`, `Separator`.
 
 ---
 

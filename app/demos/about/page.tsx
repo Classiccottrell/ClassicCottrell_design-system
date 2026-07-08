@@ -7,6 +7,8 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardTitle } from '@/components/ui/card'
 import { Container } from '@/components/ui/container'
+import { Eyebrow } from '@/components/ui/eyebrow'
+import { FeatureIcon } from '@/components/ui/feature-icon'
 import { Separator } from '@/components/ui/separator'
 
 export const metadata: Metadata = {
@@ -90,9 +92,7 @@ export default function AboutDemo() {
       {/* Values */}
       <Container className="py-8 md:py-12">
         <div className="mb-10 flex flex-col gap-3">
-          <span className="font-mono text-xs tracking-[0.2em] text-muted-foreground uppercase">
-            What I care about
-          </span>
+          <Eyebrow>What I care about</Eyebrow>
           <h2 className="font-serif text-3xl leading-tight text-balance text-foreground md:text-4xl">
             Three things guide the work
           </h2>
@@ -100,9 +100,9 @@ export default function AboutDemo() {
         <div className="grid gap-6 md:grid-cols-3">
           {values.map((v) => (
             <Card key={v.title} className="p-8">
-              <span className="flex size-12 items-center justify-center rounded-full bg-accent text-accent-foreground">
-                <v.icon className="size-5" />
-              </span>
+              <FeatureIcon>
+                <v.icon />
+              </FeatureIcon>
               <CardContent className="p-0 pt-6">
                 <CardTitle className="text-xl">{v.title}</CardTitle>
                 <CardDescription>{v.body}</CardDescription>
@@ -115,9 +115,7 @@ export default function AboutDemo() {
       {/* Timeline */}
       <Container className="py-16 md:py-24">
         <div className="mb-10 flex flex-col gap-3">
-          <span className="font-mono text-xs tracking-[0.2em] text-muted-foreground uppercase">
-            Experience
-          </span>
+          <Eyebrow>Experience</Eyebrow>
           <h2 className="font-serif text-3xl leading-tight text-balance text-foreground md:text-4xl">
             A short history
           </h2>

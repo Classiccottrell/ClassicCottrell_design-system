@@ -9,6 +9,7 @@ import {
   CardTitle,
 } from '@/components/ui/card'
 import { Container } from '@/components/ui/container'
+import { Eyebrow } from '@/components/ui/eyebrow'
 
 export const metadata: Metadata = {
   title: 'Gallery — Selected Work (Demo)',
@@ -80,9 +81,7 @@ export default function GalleryDemo() {
     <main>
       <Container className="py-16 md:py-24">
         <div className="mb-12 flex flex-col gap-3">
-          <span className="font-mono text-xs tracking-[0.2em] text-muted-foreground uppercase">
-            Portfolio
-          </span>
+          <Eyebrow>Portfolio</Eyebrow>
           <h1 className="max-w-2xl font-serif text-4xl leading-tight text-balance text-foreground md:text-6xl">
             Selected work
           </h1>

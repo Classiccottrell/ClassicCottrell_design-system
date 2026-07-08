@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import { Callout } from '@/components/ui/callout'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Container } from '@/components/ui/container'
+import { Eyebrow } from '@/components/ui/eyebrow'
 import { Field } from '@/components/ui/field'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -51,9 +52,7 @@ export default function FormDemo() {
     <main>
       <Container className="max-w-2xl py-16 md:py-24">
         <div className="flex flex-col gap-3">
-          <span className="font-mono text-xs tracking-[0.2em] text-muted-foreground uppercase">
-            Get in touch
-          </span>
+          <Eyebrow>Get in touch</Eyebrow>
           <h1 className="font-serif text-4xl leading-tight text-balance text-foreground md:text-5xl">
             Start a conversation
           </h1>

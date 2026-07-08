@@ -32,7 +32,7 @@ copy-pasting Tailwind strings — the exact drift a design system exists to prev
 
 ### Extensions made
 
-**11 new primitives in `components/ui/`,** each following the established pattern
+**13 new primitives in `components/ui/`,** each following the established pattern
 (`cn()` merge, `data-slot`, tokens only, base-ui where a primitive exists):
 
 | Component | Notes |
@@ -46,6 +46,8 @@ copy-pasting Tailwind strings — the exact drift a design system exists to prev
 | `callout` | Soft notice: accent / info / success / warning / destructive. |
 | `avatar` | base-ui avatar, initials fallback, size variants. |
 | `separator` | base-ui rule. |
+| `eyebrow` | The mono uppercase section kicker used across the system. |
+| `feature-icon` | Icon-in-a-circle chip for feature/value cards (tone + size variants). |
 
 **Refactored the existing showcase** (`components/ds/components-showcase.tsx` and
 the home `page.tsx` container/footer) to consume the new primitives — proving they
@@ -68,15 +70,22 @@ root `README.md` updated to point at both.
   page errors; exercised the form's empty-submit (error rings) and valid-submit
   (success callout) paths.
 
-## Recommendations / follow-ups (not done here)
+## Follow-ups — done
 
-1. **`lint` script is broken repo-wide.** `package.json` runs `eslint .` but there
-   is no `eslint.config.js` (ESLint 9+ flat-config), so `pnpm lint` errors. This
-   predates this change. Add `eslint-config-next`'s flat config, or switch the
-   script to `next lint`.
-2. **Consolidate duplicated recipes.** The icon-in-a-circle
-   (`size-12 rounded-full bg-accent`) and the eyebrow label appear on several
-   pages — candidates for a small `FeatureIcon` / `Eyebrow` primitive.
+1. **Fixed the broken `lint` script.** `next lint` was removed in Next 16, and the
+   repo had no ESLint config, so `pnpm lint` errored out. Added `eslint` (pinned to
+   `^9` — ESLint 10 breaks the bundled `eslint-plugin-react`) and
+   `eslint-config-next`, plus a flat `eslint.config.mjs` wiring
+   `core-web-vitals` + `typescript`. `pnpm lint` now runs clean. The one real issue
+   it surfaced — a `set-state-in-effect` in `theme-toggle.tsx` — was fixed by
+   swapping the mount-guard for a CSS-driven (`.dark:`) icon, which is also more
+   robust against hydration mismatch.
+2. **Consolidated duplicated recipes** into two primitives: `Eyebrow` (the mono
+   uppercase kicker, ~10 sites) and `FeatureIcon` (the icon-in-a-circle, on the
+   landing + about cards). The demo pages and the `ds/` showcases now use them.
+
+## Recommendations / follow-ups (still open)
+
 3. **Promote `Badge`/`Callout` variants toward `aria` semantics** — e.g. give
    `Callout variant="destructive"` `role="alert"` rather than the default
    `role="status"`.

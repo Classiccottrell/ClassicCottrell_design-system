@@ -12,6 +12,8 @@ import {
   CardTitle,
 } from '@/components/ui/card'
 import { Container } from '@/components/ui/container'
+import { Eyebrow } from '@/components/ui/eyebrow'
+import { FeatureIcon } from '@/components/ui/feature-icon'
 
 export const metadata: Metadata = {
   title: 'Studio — Landing (Demo)',
@@ -93,9 +95,7 @@ export default function LandingDemo() {
       {/* Features */}
       <Container className="py-16 md:py-24">
         <div className="mb-10 flex flex-col gap-3">
-          <span className="font-mono text-xs tracking-[0.2em] text-muted-foreground uppercase">
-            What we do
-          </span>
+          <Eyebrow>What we do</Eyebrow>
           <h2 className="max-w-2xl font-serif text-3xl leading-tight text-balance text-foreground md:text-5xl">
             A studio built around systems
           </h2>
@@ -103,9 +103,9 @@ export default function LandingDemo() {
         <div className="grid gap-6 md:grid-cols-3">
           {features.map((f) => (
             <Card key={f.title} className="p-8">
-              <span className="flex size-12 items-center justify-center rounded-full bg-accent text-accent-foreground">
-                <f.icon className="size-5" />
-              </span>
+              <FeatureIcon>
+                <f.icon />
+              </FeatureIcon>
               <CardContent className="p-0 pt-6">
                 <CardTitle>{f.title}</CardTitle>
                 <CardDescription>{f.body}</CardDescription>

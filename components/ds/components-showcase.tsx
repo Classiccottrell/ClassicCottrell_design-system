@@ -12,6 +12,7 @@ import {
   CardTitle,
 } from '@/components/ui/card'
 import { Checkbox } from '@/components/ui/checkbox'
+import { Eyebrow } from '@/components/ui/eyebrow'
 import { Field } from '@/components/ui/field'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -67,9 +68,7 @@ export function ComponentsShowcase() {
       {/* Utility stack */}
       <div className="flex flex-col gap-6">
         <Card className="p-6">
-          <span className="mb-4 block font-mono text-xs tracking-[0.2em] text-muted-foreground uppercase">
-            Badges
-          </span>
+          <Eyebrow className="mb-4 block">Badges</Eyebrow>
           <div className="flex flex-wrap gap-2">
             <Badge>Primary</Badge>
             <Badge variant="accent">Accent</Badge>

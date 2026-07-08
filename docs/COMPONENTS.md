@@ -220,6 +220,36 @@ Thin rule using the border token. Built on `@base-ui/react/separator`.
 
 ---
 
+## Eyebrow
+
+The small mono, letter-spaced, uppercase kicker that sits above a heading
+throughout the system (section labels, card-group labels). Renders a `<span>`;
+pass `className` to add layout (e.g. `mb-4 block`).
+
+```tsx
+<Eyebrow>What we do</Eyebrow>
+<Eyebrow className="mb-4 block">Badges</Eyebrow>
+```
+
+---
+
+## FeatureIcon
+
+A lucide icon centered in a soft round chip — used to head feature and value
+cards. Pass the icon as a child; it is auto-sized.
+
+```tsx
+<FeatureIcon><Compass /></FeatureIcon>
+<FeatureIcon tone="primary" size="lg"><Sparkles /></FeatureIcon>
+```
+
+| Prop | Values | Default |
+| --- | --- | --- |
+| `tone` | `accent` · `primary` · `muted` | `accent` |
+| `size` | `md` (48px) · `lg` (56px) | `md` |
+
+---
+
 ## Design-system layout helpers (`components/ds/`)
 
 These are not primitives but are reused by the showcase and are handy for pages:
