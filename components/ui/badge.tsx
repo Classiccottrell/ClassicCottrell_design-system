@@ -24,6 +24,17 @@ const badgeVariants = cva(
  * Badge — a small pill for status, tags, and metadata.
  * Variants mirror the surface tokens: `default` (forest), `accent` (sage),
  * `muted` (sand), and `outline`.
+ *
+ * @remarks
+ * Use Badge for a short label inline with other content (a card, a list row,
+ * a nav item) — not for reporting the result of an action, which is
+ * Callout's job. Use `default` to highlight a status that should draw the
+ * eye (e.g. "New"); `muted` for a low-emphasis tag (e.g. a category label);
+ * `outline` when the badge sits on a colored surface and needs to stay quiet.
+ *
+ * @example
+ * <Badge>New</Badge>
+ * <Badge variant="muted">Draft</Badge>
  */
 function Badge({
   className,

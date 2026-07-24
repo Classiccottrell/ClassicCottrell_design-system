@@ -5,6 +5,10 @@ import { cn } from '@/lib/utils'
 /**
  * Card — the primary content surface. A rounded, bordered `bg-card` panel
  * that composes with CardHeader / CardMedia / CardContent / CardFooter.
+ *
+ * @remarks
+ * Compose only the subcomponents you need — e.g. skip `CardMedia` for a
+ * text-only card, skip `CardFooter` when there's no action row.
  */
 function Card({ className, ...props }: ComponentProps<'div'>) {
   return (
@@ -36,6 +40,7 @@ function CardMedia({ className, ...props }: ComponentProps<'div'>) {
   )
 }
 
+/** CardHeader — padded title/description block. */
 function CardHeader({ className, ...props }: ComponentProps<'div'>) {
   return (
     <div
@@ -46,6 +51,7 @@ function CardHeader({ className, ...props }: ComponentProps<'div'>) {
   )
 }
 
+/** CardTitle — serif heading. */
 function CardTitle({ className, ...props }: ComponentProps<'h3'>) {
   return (
     <h3
@@ -56,6 +62,7 @@ function CardTitle({ className, ...props }: ComponentProps<'h3'>) {
   )
 }
 
+/** CardDescription — muted body copy. */
 function CardDescription({ className, ...props }: ComponentProps<'p'>) {
   return (
     <p
@@ -66,6 +73,7 @@ function CardDescription({ className, ...props }: ComponentProps<'p'>) {
   )
 }
 
+/** CardContent — flexible body (`flex-1`). */
 function CardContent({ className, ...props }: ComponentProps<'div'>) {
   return (
     <div
@@ -76,6 +84,7 @@ function CardContent({ className, ...props }: ComponentProps<'div'>) {
   )
 }
 
+/** CardFooter — bottom action row. */
 function CardFooter({ className, ...props }: ComponentProps<'div'>) {
   return (
     <div

@@ -35,6 +35,13 @@ const iconFor = {
  * surface for a calm tone; `success`/`warning`/`destructive` shift color for
  * emphasis. Pass a `title` and children as the body.
  *
+ * @remarks
+ * Use `success`/`warning`/`destructive` only to reflect the outcome of a
+ * user-initiated action (form submit, save, delete) — use `accent`/`info`
+ * for ambient tips or context that isn't reporting a result. Prefer Callout
+ * over Badge when the message needs a full sentence and an icon; prefer
+ * Badge for a single-word status inline with other content.
+ *
  * @example
  * <Callout variant="success" title="Message sent">We'll reply within a day.</Callout>
  */

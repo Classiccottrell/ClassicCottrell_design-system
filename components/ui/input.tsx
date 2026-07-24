@@ -5,6 +5,10 @@ import { cn } from '@/lib/utils'
 /**
  * Input — a single-line text field tuned to the system's focus ring and
  * surface tokens. Forwards all native input props (type, placeholder, etc.).
+ *
+ * @remarks
+ * Compose Input inside Field rather than adding your own label/error markup,
+ * so error styling stays consistent across the system.
  */
 function Input({ className, type = 'text', ...props }: ComponentProps<'input'>) {
   return (
