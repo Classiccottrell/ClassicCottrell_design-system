@@ -94,18 +94,41 @@ why, or replace it with a token).
 
 ## The `@example` JSDoc tag
 
-Used today on the primitives that have meaningful variation. The target
-convention going forward: every exported primitive gets a JSDoc block above
-its function with a one-line description and, where the component has real
-variation, an `@example` snippet showing it.
+Every primitive in `components/ui/` carries a JSDoc block with a one-line
+description and an `@example` snippet, and components with a real decision to
+make (which variant?) add a `@remarks` block stating the rule. **This is
+enforced** — `pnpm validate` fails on a primitive without `@example`.
+
+## What `pnpm validate` enforces
+
+`scripts/validate-tokens.mjs` mechanically checks the rules above. It reads
+and reports only — no `--fix`, no edits (see the trust levels in
+`AGENTS.md`). Checks:
+
+| Check | Rule |
+| --- | --- |
+| `no-raw-hex` | No hex literals in `components/ui/*.tsx` — use token utilities. |
+| `data-slot` | Every primitive sets `data-slot`. |
+| `kebab-case-filename` | Filenames in `components/ui/` are kebab-case. |
+| `example-tag` | Every primitive has an `@example`. |
+| `token-pairing` | Every `:root` token has a `--color-*` alias in `@theme inline`. |
+| `theme-parity` | `:root`, `.dark`, and the media fallback declare the same token set. |
+| `swatch-drift` | Hex shown in `color-palette.tsx` matches the token it names. |
+| `theme-color-drift` | `layout.tsx` `themeColor` matches `--background` per theme. |
+
+The last three are the ones worth understanding, because they catch failures
+nothing else would: adding a color to `:root` and forgetting dark mode, and
+the two places that hardcode a hex copy of a token for display
+(`color-palette.tsx`) or browser chrome (`layout.tsx`) silently going stale
+after a token edit.
 
 ## Known gaps
 
 This section is a live TODO, not a claim that the repo is fully compliant
 with the rules above:
 
-1. `card.tsx`'s `Card` and `CardMedia` have JSDoc; `CardHeader`,
-   `CardTitle`, `CardDescription`, `CardContent`, and `CardFooter` in the
-   same file did not until this pass — see the components changed alongside
-   this doc.
-2. The `rounded-[min(...)]` hybrid values noted above are unreconciled.
+1. The `rounded-[min(var(--radius-md),Npx)]` hybrid values in `button.tsx`
+   and `checkbox.tsx` are unreconciled — see the radius note above.
+2. `:root`, `.dark`, and the `prefers-color-scheme` fallback duplicate the
+   same token values in three places. `theme-parity` now catches a *missing*
+   token, but the duplication itself is still a consolidation candidate.

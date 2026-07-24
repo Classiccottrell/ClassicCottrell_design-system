@@ -4,6 +4,13 @@ import { cn } from '@/lib/utils'
 
 /**
  * Textarea — a multi-line text field matching the Input's tokens and focus ring.
+ *
+ * @remarks
+ * Like Input, compose it inside Field rather than hand-rolling label/error
+ * markup, so error styling stays consistent.
+ *
+ * @example
+ * <Textarea id="message" rows={5} aria-invalid={hasError} />
  */
 function Textarea({ className, ...props }: ComponentProps<'textarea'>) {
   return (

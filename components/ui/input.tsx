@@ -9,6 +9,10 @@ import { cn } from '@/lib/utils'
  * @remarks
  * Compose Input inside Field rather than adding your own label/error markup,
  * so error styling stays consistent across the system.
+ *
+ * @example
+ * <Input id="email" type="email" placeholder="you@studio.com" />
+ * <Input id="email" aria-invalid={!!error} />
  */
 function Input({ className, type = 'text', ...props }: ComponentProps<'input'>) {
   return (

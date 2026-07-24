@@ -28,15 +28,24 @@ traffic ones:
 ## What not to do
 
 - No raw hex colors in `components/ui/*.tsx` — use token utilities.
-- No new primitive without `data-slot="<kebab-name>"` and a kebab-case
-  filename.
+- No new primitive without `data-slot="<kebab-name>"`, a kebab-case
+  filename, and an `@example` JSDoc tag.
 - No hand-rolled variant conditionals where CVA already models the axis.
+- Never add a color to `:root` alone — it needs `.dark`, the
+  `prefers-color-scheme` fallback, *and* the `@theme inline` alias. This is
+  the most common way to silently break dark mode here.
 
 ## Enforcement
 
 `scripts/validate-tokens.mjs` (`pnpm validate`) checks the rules above
-mechanically; `.github/workflows/ci.yml` runs it, `pnpm lint`, and
-`pnpm typecheck` on every PR. All three must pass before merge.
+mechanically — including token/dark-mode parity and drift between tokens and
+the two files that hardcode hex copies of them for display
+(`components/ds/color-palette.tsx`, `app/layout.tsx`'s `themeColor`). See the
+table in `docs/CONVENTIONS.md` for what each check covers.
+
+`.github/workflows/ci.yml` runs `pnpm lint`, `pnpm typecheck`,
+`pnpm validate`, and `pnpm build` on every PR and on pushes to `main`. All
+four must pass before merge.
 
 ## Trust levels
 

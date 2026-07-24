@@ -9,6 +9,15 @@ import { cn } from '@/lib/utils'
  * @remarks
  * Compose only the subcomponents you need — e.g. skip `CardMedia` for a
  * text-only card, skip `CardFooter` when there's no action row.
+ *
+ * @example
+ * <Card>
+ *   <CardMedia><span className="font-serif text-5xl italic">Art</span></CardMedia>
+ *   <CardContent className="pt-6">
+ *     <CardTitle>Editorial card</CardTitle>
+ *     <CardDescription>Calm neutral surfaces, one green accent.</CardDescription>
+ *   </CardContent>
+ * </Card>
  */
 function Card({ className, ...props }: ComponentProps<'div'>) {
   return (
