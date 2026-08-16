@@ -6,6 +6,7 @@ const nav = [
   { label: 'Buttons', href: '#buttons' },
   { label: 'Components', href: '#components' },
   { label: 'Demos', href: '#demos' },
+  { label: 'Sandbox', href: '/sandbox' },
 ]
 
 export function SiteHeader() {
