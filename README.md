@@ -1,5 +1,8 @@
 # ClassicCottrell Design System
 
+- A workbench for my website classiccottrell.ca
+- View the live site at design.classiccottrell.ca
+
 An editorial design system — warm cream canvas, a single forest-green accent, and a
 Rosarivo-serif / Red Hat Display-sans pairing — inspired by ClassicCottrell.ca.
 Built with [Next.js](https://nextjs.org) (App Router), React 19, Tailwind CSS v4,
