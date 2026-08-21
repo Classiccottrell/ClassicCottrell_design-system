@@ -1,13 +1,12 @@
 # ClassicCottrell Design System
 
-- A workbench for my website classiccottrell.ca
-- View the live site at design.classiccottrell.ca
-
 An editorial design system — warm cream canvas, a single forest-green accent, and a
 Rosarivo-serif / Red Hat Display-sans pairing — inspired by ClassicCottrell.ca.
 Built with [Next.js](https://nextjs.org) (App Router), React 19, Tailwind CSS v4,
 and [`@base-ui/react`](https://base-ui.com) primitives.
 
+- Workbench for my website classiccottrell.ca
+- View the live site at design.classiccottrell.ca
 - **Live showcase:** the home page (`/`) — tokens, type, buttons, and components.
 - **Demo pages:** `/demos` — a landing, contact form, about, and gallery page, each
   assembled entirely from the reusable primitives.
