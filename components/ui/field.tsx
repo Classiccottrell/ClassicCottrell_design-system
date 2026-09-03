@@ -8,6 +8,11 @@ import { Label } from '@/components/ui/label'
  * optional hint or error with consistent spacing. Compose it with Input,
  * Textarea, Checkbox, etc.
  *
+ * @remarks
+ * Use Field whenever a control needs a visible label and/or error state;
+ * skip it for a bare search box or an inline filter where a label would be
+ * redundant.
+ *
  * @example
  * <Field label="Email" htmlFor="email" hint="We never share it.">
  *   <Input id="email" type="email" />

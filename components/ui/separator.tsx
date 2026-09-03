@@ -6,6 +6,10 @@ import { cn } from '@/lib/utils'
 /**
  * Separator — a thin rule using the border token. Set `orientation="vertical"`
  * for inline dividers (give it a height via className).
+ *
+ * @example
+ * <Separator />
+ * <Separator orientation="vertical" className="h-6" />
  */
 function Separator({
   className,

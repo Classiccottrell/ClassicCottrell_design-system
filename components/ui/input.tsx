@@ -5,6 +5,14 @@ import { cn } from '@/lib/utils'
 /**
  * Input — a single-line text field tuned to the system's focus ring and
  * surface tokens. Forwards all native input props (type, placeholder, etc.).
+ *
+ * @remarks
+ * Compose Input inside Field rather than adding your own label/error markup,
+ * so error styling stays consistent across the system.
+ *
+ * @example
+ * <Input id="email" type="email" placeholder="you@studio.com" />
+ * <Input id="email" aria-invalid={!!error} />
  */
 function Input({ className, type = 'text', ...props }: ComponentProps<'input'>) {
   return (

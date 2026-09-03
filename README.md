@@ -16,6 +16,7 @@ and [`@base-ui/react`](https://base-ui.com) primitives.
 | Doc | What's in it |
 | --- | --- |
 | [`docs/COMPONENTS.md`](docs/COMPONENTS.md) | Every primitive in `components/ui/` — props, variants, and copy-paste examples. |
+| [`docs/CONVENTIONS.md`](docs/CONVENTIONS.md) | Naming, `data-slot`, the CVA pattern, and the two-layer token aliasing rule. |
 | [`docs/PAGES.md`](docs/PAGES.md) | Step-by-step reconstruction of each demo page from the primitives. |
 | [`REVIEW.md`](REVIEW.md) | Architecture review, what was extended, and follow-up recommendations. |
 

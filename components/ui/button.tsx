@@ -40,6 +40,26 @@ const buttonVariants = cva(
   },
 )
 
+/**
+ * Button — CVA-based interactive control built on `@base-ui/react/button`.
+ * Supports rendering as another element (e.g. a link) via base-ui's `render`
+ * prop.
+ *
+ * @remarks
+ * Use `default` for the single primary action per view/section. Use
+ * `outline` or `ghost` for secondary actions placed alongside a primary one
+ * (e.g. "Cancel" next to "Save") — `outline` when it needs visible weight,
+ * `ghost` when it should recede. Use `destructive` only for actions that
+ * delete or irreversibly change data, and pair it with a confirmation step.
+ * Use `link` for an inline, text-level action that shouldn't look like a
+ * button. Use `secondary` for a filled action that isn't the primary one but
+ * still needs presence (e.g. a toolbar's default state).
+ *
+ * @example
+ * <Button>Save</Button>
+ * <Button variant="outline">Cancel</Button>
+ * <Button variant="destructive">Delete account</Button>
+ */
 function Button({
   className,
   variant = 'default',

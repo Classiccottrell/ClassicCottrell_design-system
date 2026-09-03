@@ -6,6 +6,10 @@ import { cn } from '@/lib/utils'
  * Container — the shared page gutter used across the design system.
  * Centers content and caps it at the system's `max-w-6xl` measure with
  * consistent horizontal padding. Renders a <div> by default.
+ *
+ * @example
+ * <Container>…</Container>
+ * <Container className="py-24">…</Container>
  */
 function Container({ className, ...props }: ComponentProps<'div'>) {
   return (

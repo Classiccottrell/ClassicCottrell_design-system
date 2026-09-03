@@ -10,6 +10,12 @@ import { cn } from '@/lib/utils'
  * Checkbox — a base-ui checkbox styled to the system tokens. Ticks fill with
  * `bg-primary`. Forwards form props (name, checked, defaultChecked, onCheckedChange).
  * Pair with a <Label htmlFor> using the same `id`.
+ *
+ * @example
+ * <Checkbox defaultChecked />
+ *
+ * // Controlled — onCheckedChange gives a boolean
+ * <Checkbox checked={updates} onCheckedChange={(v) => setUpdates(v === true)} />
  */
 function Checkbox({
   className,
